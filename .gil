@@ -1,6 +1,7 @@
 source .gil_number
 n=$(($n+1))
-mv databased ~
+mv databased databasedd
+mv databasedd
 mkdir databased
 touch teste
 mv teste databased
@@ -9,4 +10,5 @@ git add .
 git commit -m up$n
 git push
 rm -rf databased
-mv ~/databased ~/database
+mv ~/databasedd ~/database
+mv databasedd databased
