@@ -54,6 +54,9 @@ def action_f():
 
     if ( mode == "4" ):
         os.system("sed -i '/"+info+"/d' databased/"+pessoa)
+    if ( mode == "5" ):
+        os.system("cd databased")
+        os.system("./databased/.gil")
 con=True
 mesmo=True
 not_rest=False
