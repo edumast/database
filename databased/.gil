@@ -1,6 +1,7 @@
 source .gil_number
 n=$(($n+1))
 sed -i "s/n=.*#end/n=$n #end/g" .gil_number
+git remote add origin https://github.com/edumast/mydatabase
 git add .
 git commit -m up$n
 git push
