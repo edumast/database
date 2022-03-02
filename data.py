@@ -5,12 +5,18 @@ pessoa="d"
 print(GREEN)
 def mode_f():
     print(GREEN)
-    print("1.new 2.edit 3.check")
+    print("1.new 2.edit 3.check 4.remove info 15.remove profile")
     mode=input("mode:")
     return mode
 def pessoa_f():
-    pessoa="pa"
-    pessoa=input("pessoa:") 
+    pessoa_wh=True
+    while ( pessoa_wh == True ):
+        pessoa="pa"
+        pessoa=input("pessoa:")
+        if ( pessoa == "list" ):
+            os.system("ls databased")
+        else:
+            pessoa_wh=False
     return pessoa
 def info_f():
     print("1.name 2.age")
@@ -37,6 +43,15 @@ def action_f():
         print()
         print("")
         not_rest=False
+    if ( mode == "15" ):
+        print(RED)
+        confirm=input("True or False?")
+        if ( confirm == "True" ):
+            os.system("rm -rf databased/"+pessoa)
+            print("usr:"+pessoa+" removed")
+            print(GREEN)
+
+
     if ( mode == "4" ):
         os.system("sed -i '/"+info+"/d' databased/"+pessoa)
 con=True
@@ -56,6 +71,8 @@ while( con == True ):
             not_rest=True
         if ( mode == "4" ):
             valor_b=False
+        if ( mode == "15" ):
+            not_rest=True
         mesmo=True
         while( mesmo == True ):
             if ( not_rest == False ):
@@ -72,6 +89,10 @@ while( con == True ):
             if ( mesmo == True ):
                 action_f()
                 not_rest=False
+                if ( mode == "15" ):
+                    mes_p=False
+                    mesmo=False
+                    break
                 if ( mode == "3" ):
                     break
             
