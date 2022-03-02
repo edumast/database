@@ -3,6 +3,7 @@ n=$(($n+1))
 sed -i "s/n=.*#end/n=$n #end/g" .gil_number
 git remote rm origin
 git remote add origin https://github.com/edumast/mydatabase
+git pull .
 git add .
 git commit -m up$n
 git push --set-upstream origin main
