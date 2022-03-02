@@ -1,7 +1,7 @@
 source .gil_number
 n=$(($n+1))
 mv databased databasedd
-mv databasedd
+mv databasedd ~
 mkdir databased
 touch teste
 mv teste databased
