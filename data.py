@@ -37,27 +37,42 @@ def action_f():
         print()
         print("")
         not_rest=False
+    if ( mode == "4" ):
+        os.system("sed -i '/"+info+"/d' databased/"+pessoa)
 con=True
 mesmo=True
 not_rest=False
+mes_p=False
 while( con == True ):
+    valor_b=True
+    if ( mes_p == False ):
+        pessoa=pessoa_f()
+        mes_p=True
     mode=mode_f()
-    if ( mode == "3" ):
-        not_rest=True
-    pessoa=pessoa_f()
-    mesmo=True
-    while( mesmo == True ):
-        if ( not_rest == False ):
-            info=info_f()
-            if ( info == 1):
-                info="nome"
-            if ( info == 2 ):
-                info="idade"
-            if ( info == "stop" ):
-                mesmo=False
-            valor=valor_f()
-        if ( mesmo == True ):
-            action_f()
-            not_rest=False
-            mesmo=False
+    if ( mode == "exit" ):
+        mes_p=False
+    if ( mode != "exit" ):
+        if ( mode == "3" ):
+            not_rest=True
+        if ( mode == "4" ):
+            valor_b=False
+        mesmo=True
+        while( mesmo == True ):
+            if ( not_rest == False ):
+                info=info_f()
+                if ( info == 1):
+                    info="nome"
+                if ( info == 2 ):
+                    info="idade"
+                if ( info == "stop" ):
+                    mesmo=False
+                if ( mesmo == True ):
+                    if ( valor_b == True ):
+                        valor=valor_f()
+            if ( mesmo == True ):
+                action_f()
+                not_rest=False
+                if ( mode == "3" ):
+                    break
+            
 
