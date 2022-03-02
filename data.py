@@ -18,6 +18,8 @@ def pessoa_f():
         pessoa=input("pessoa:")
         if ( pessoa == "list" ):
             os.system("ls databased")
+            print(GREEN)
+            BOLD()
         else:
             pessoa_wh=False
     return pessoa
