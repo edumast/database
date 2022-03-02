@@ -1,8 +1,12 @@
 source .gil_number
 n=$(($n+1))
 mv databased ~
+mkdir databased
+touch teste
+mv teste databased
 sed -i "s/n=.*#end/n=$n #end/g" .gil_number
 git add .
 git commit -m up$n
 git push
+rm -rf databased
 mv ~/databased ~/database
