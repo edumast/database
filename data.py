@@ -4,7 +4,9 @@ import os.path
 info=0
 pessoa="d"
 print(GREEN)
+BOLD()
 def mode_f():
+    BOLD()
     print(GREEN)
     print("1.new 2.edit 3.check 4.remove info 15.remove profile")
     mode=input("mode:")
@@ -56,8 +58,7 @@ def action_f():
     if ( mode == "4" ):
         os.system("sed -i '/"+info+"/d' databased/"+pessoa)
     if ( mode == "5" ):
-        os.system("mv databased ~")
-        os.system("~/databased/.gil")
+        os.system("cp -r databased ~")
         not_rest=False
 con=True
 mesmo=True
