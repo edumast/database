@@ -72,10 +72,12 @@ while( con == True ):
     if ( mode == "exit" ):
         mes_p=False
     if ( mode != "exit" ):
-        if ( mode == "3" or "5" ):
+        if ( mode == "3" ):
             not_rest=True
         if ( mode == "4" ):
             valor_b=False
+        if ( mode == "5" ):
+            not_rest=True
         if ( mode == "15" ):
             not_rest=True
         mesmo=True
@@ -98,7 +100,9 @@ while( con == True ):
                     mes_p=False
                     mesmo=False
                     break
-                if ( mode == "3" or "5" ):
+                if ( mode == "3" ):
+                    break
+                if ( mode == "5" ):
                     break
             
 
