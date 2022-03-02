@@ -57,6 +57,7 @@ def action_f():
     if ( mode == "5" ):
         os.system("cd databased")
         os.system("./databased/.gil")
+        not_rest=False
 con=True
 mesmo=True
 not_rest=False
@@ -70,7 +71,7 @@ while( con == True ):
     if ( mode == "exit" ):
         mes_p=False
     if ( mode != "exit" ):
-        if ( mode == "3" ):
+        if ( mode == "3" or "5" ):
             not_rest=True
         if ( mode == "4" ):
             valor_b=False
@@ -96,7 +97,7 @@ while( con == True ):
                     mes_p=False
                     mesmo=False
                     break
-                if ( mode == "3" ):
+                if ( mode == "3" or "5" ):
                     break
             
 
